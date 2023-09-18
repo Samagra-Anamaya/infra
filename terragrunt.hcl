@@ -17,7 +17,11 @@ generate "provider" {
   if_exists = "overwrite_terragrunt"
   contents  = <<EOF
 provider "azurerm" {
-  features {}
+  features {
+     virtual_machine {
+      delete_os_disk_on_deletion     = false
+    }
+  }
 }
 EOF
 }
@@ -39,5 +43,6 @@ remote_state {
 
 inputs = merge(
   local.site_vars.locals,
+  local.project_vars.locals
 )
 

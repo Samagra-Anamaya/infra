@@ -23,3 +23,7 @@ variable "admin_disk_size" {
 variable "main_subnet_id" {
   description = "Main Subnet Id"
 }
+
+variable "public_key_location" {
+  description = "Location of Public Key File"
+}

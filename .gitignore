@@ -33,3 +33,6 @@ override.tf.json
 
 # Local environment variables
 .env
+
+key
+key.pub
