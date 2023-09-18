@@ -44,7 +44,14 @@ resource "azurerm_network_security_group" "main" {
 }
 
 resource "azurerm_public_ip" "main" {
-  name                = var.public_ip_name
+  name                = var.main_public_ip_name
+  resource_group_name = var.resource_group_name
+  location            = var.location
+  allocation_method   = "Static"
+}
+
+resource "azurerm_public_ip" "admin" {
+  name                = var.admin_public_ip_name
   resource_group_name = var.resource_group_name
   location            = var.location
   allocation_method   = "Static"

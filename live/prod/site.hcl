@@ -10,5 +10,6 @@ locals {
   main_subnet_name                       = "${local.resource_group_name}-main-subnet"
   main_subnet_address_prefixes           = ["10.6.1.0/26"]
   main_subnet_security_group_name        = "${local.resource_group_name}-main-sg"
-  public_ip_name                         = "${local.resource_group_name}-public-ip"
+  main_public_ip_name                    = "${local.resource_group_name}-main-public-ip"
+  admin_public_ip_name                   = "${local.resource_group_name}-admin-public-ip"
 }

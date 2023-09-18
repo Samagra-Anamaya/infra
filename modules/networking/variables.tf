@@ -28,6 +28,10 @@ variable "main_subnet_security_group_name" {
   description = "Main subnet security group name"
 }
 
-variable "public_ip_name" {
+variable "main_public_ip_name" {
+    description = "Public ip name"
+}
+
+variable "admin_public_ip_name" {
     description = "Public ip name"
 }
