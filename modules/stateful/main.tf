@@ -47,7 +47,7 @@ resource "azurerm_linux_virtual_machine" "stateful" {
   }
 
   tags = {
-    type = "admin"
+    type = "stateful"
   }
 
 }
