@@ -9,8 +9,8 @@ resource "azurerm_network_security_group" "admin" {
     direction                  = "Inbound"
     access                     = "Allow"
     protocol                   = "Tcp"
-    source_port_range          = "22"
-    destination_port_range     = "*"
+    source_port_range          = "*"
+    destination_port_range     = "22"
     source_address_prefix      = "*"
     destination_address_prefix = "*"
   }
@@ -34,6 +34,11 @@ resource "azurerm_network_interface" "admin" {
       private_ip_address_allocation = "Dynamic"  
       public_ip_address_id = azurerm_public_ip.admin.id
     }
+}
+
+resource "azurerm_network_interface_security_group_association" "admin" {
+  network_interface_id      = azurerm_network_interface.admin.id
+  network_security_group_id = azurerm_network_security_group.admin.id
 }
 
 resource "azurerm_linux_virtual_machine" "admin" {

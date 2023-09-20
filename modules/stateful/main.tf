@@ -16,6 +16,11 @@ resource "azurerm_network_interface" "stateful" {
     }
 }
 
+resource "azurerm_network_interface_security_group_association" "stateful" {
+  network_interface_id      = azurerm_network_interface.stateful.id
+  network_security_group_id = azurerm_network_security_group.stateful.id
+}
+
 resource "azurerm_linux_virtual_machine" "stateful" {
   name                  = "${var.resource_group_name}-stateful"
   computer_name         ="stateful"
