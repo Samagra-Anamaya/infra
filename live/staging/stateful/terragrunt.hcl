@@ -12,5 +12,7 @@ terraform {
 
 inputs = {
     main_subnet_id = dependency.networking.outputs.main_subnet_id
+    stateful_instance_size = "Standard_E2bds_v5"
+
 }
 
